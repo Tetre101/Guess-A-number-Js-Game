@@ -13,4 +13,4 @@ Tips
 Take note of the hints that you get after each guess to narrow down the possibilities.
 Don't be afraid to use a process of elimination to help you guess the correct number.
 Have fun and good luck!
-Note: This is a simple code with a basic functionality of guess my number game, feel free to customize it as you like.
+Note:This is a simple code with a basic functionality of guess my number game, feel free to customize it as you like.
