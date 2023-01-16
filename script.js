@@ -5,6 +5,16 @@
 // document.querySelector('.highscore').textContent = 50;
 // document.querySelector('.guess').value = 40;
 
+// window.addEventListener("load", () => {
+//   let audio = new Audio("./assets/start.mp3");
+//   audio.play();
+// });
+
+window.onload = function () {
+  let audio = new Audio("./assets/start.mp3");
+  audio.play();
+};
+
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
