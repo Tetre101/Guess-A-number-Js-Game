@@ -11,8 +11,33 @@
 // });
 
 window.onload = function () {
-  let audio = new Audio("./assets/start.mp3");
-  audio.play();
+  const audio = new Audio("./assets/start.mp3");
+  audio.muted = true;
+
+  function playAudio() {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.muted = false;
+    audio.play();
+  }
+
+  // try to play audio to see if it works, on Chrome without
+  // audio permission this would not work as interaction from
+  // the use is needed first.
+  audio.play().then(() => {
+    // audio is allowed, no problems, just unmute and restart
+    playAudio();
+  }).catch(() => {
+    // we need to show a modal here and ask the user to click
+    // it to start the game.
+    document.querySelector("#backdrop").classList.add("revealed");
+    document.querySelector("#backdrop").addEventListener(
+      'click', _ => {
+        document.querySelector("#backdrop").classList.remove("revealed");
+        playAudio();
+      }
+    )
+  });
 };
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;

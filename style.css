@@ -118,3 +118,24 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+/* added by Orwa for audio-starting backdrop */
+#backdrop {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.8);
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+#backdrop.revealed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
