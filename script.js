@@ -24,20 +24,21 @@ window.onload = function () {
   // try to play audio to see if it works, on Chrome without
   // audio permission this would not work as interaction from
   // the use is needed first.
-  audio.play().then(() => {
-    // audio is allowed, no problems, just unmute and restart
-    playAudio();
-  }).catch(() => {
-    // we need to show a modal here and ask the user to click
-    // it to start the game.
-    document.querySelector("#backdrop").classList.add("revealed");
-    document.querySelector("#backdrop").addEventListener(
-      'click', _ => {
+  audio
+    .play()
+    .then(() => {
+      // audio is allowed, no problems, just unmute and restart
+      playAudio();
+    })
+    .catch(() => {
+      // we need to show a modal here and ask the user to click
+      // it to start the game.
+      document.querySelector("#backdrop").classList.add("revealed");
+      document.querySelector("#backdrop").addEventListener("click", (_) => {
         document.querySelector("#backdrop").classList.remove("revealed");
         playAudio();
-      }
-    )
-  });
+      });
+    });
 };
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -58,11 +59,10 @@ document.querySelector(".check").addEventListener("click", function () {
 
     // when player wins
   } else if (guess === secretNumber) {
+    document.querySelector("body").style.backgroundColor = "green";
     // document.querySelector('.message').textContent = 'Correct number 👍';
     displayMessage("Correct number 👍");
     gameNumber.textContent = secretNumber;
-
-    document.querySelector("body").style.backgroundColor = "Green";
 
     gameNumber.style.width = "30rem";
 
@@ -85,7 +85,7 @@ document.querySelector(".check").addEventListener("click", function () {
       );
       score = score - 1;
       document.querySelector(".score").textContent = score;
-      document.querySelector("body").style.backgroundColor = "purple";
+
       gameNumber.style.width = "10rem";
     } else {
       // document.querySelector('.message').textContent = 'you lost the game😥';
