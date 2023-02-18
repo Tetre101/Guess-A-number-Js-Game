@@ -15,3 +15,5 @@ Don't be afraid to use a process of elimination to help you guess the correct nu
 Have fun and good luck!
 # Note:
 This is a simple code with a basic functionality of guess my number game, feel free to customize it as you like.
+# Enjoy The Game 
+https://tetre101.github.io/Guess-A-number-Js-Game/
